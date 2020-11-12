@@ -1,3 +1,21 @@
+solydx-system-adjustments-11 (3.3.3) stable; urgency=low
+
+  * Rename Grub theme to solydxk
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Tue, 10 Nov 2020 13:10:48 +0100
+
+solydx-system-adjustments-11 (3.3.2) stable; urgency=low
+
+  * Do not use user background for lightdm
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Mon, 09 Nov 2020 16:23:27 +0100
+
+solydx-system-adjustments-11 (3.3.1) stable; urgency=low
+
+  * Use synaptic to update system
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Mon, 21 Sep 2020 15:25:37 +0200
+
 solydx-system-adjustments-11 (3.3.0) stable; urgency=low
 
   * Fix xfce-applications.menu
