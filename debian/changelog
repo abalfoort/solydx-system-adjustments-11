@@ -1,3 +1,9 @@
+solydx-system-adjustments-11 (3.3.7) stable; urgency=low
+
+  * Updated whiskermenu-9.rc to new format
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Wed, 08 Sep 2021 10:38:14 +0200
+
 solydx-system-adjustments-11 (3.3.6) stable; urgency=low
 
   * Added synaptic to favourites
