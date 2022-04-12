@@ -1,3 +1,10 @@
+solydx-system-adjustments-11 (3.3.8) stable; urgency=low
+
+  * Update clock settings in xfce4-panel.xml
+  * Disable automount-drives in thunar-volman.xml
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Mon, 11 Apr 2022 11:22:17 +0200
+
 solydx-system-adjustments-11 (3.3.7) stable; urgency=low
 
   * Updated whiskermenu-9.rc to new format
