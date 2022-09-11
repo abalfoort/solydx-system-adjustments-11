@@ -1,3 +1,9 @@
+solydx-system-adjustments-11 (3.4.3) stable; urgency=low
+
+  * Move separator to panel clock
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Wed, 07 Sep 2022 12:29:13 +0200
+
 solydx-system-adjustments-11 (3.4.2) stable; urgency=low
 
   * Change PRETTY_NAME in /etc/os-release
