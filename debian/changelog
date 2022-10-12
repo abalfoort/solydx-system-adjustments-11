@@ -1,3 +1,11 @@
+solydx-system-adjustments-11 (3.4.4) stable; urgency=low
+
+  * Remove /etc/X11/Xsession.d/95x11-user-defaults
+  * Replace /etc/skel/.config/xfce4/panel/launcher-13/13756999502.desktop
+  * Add /etc/xdg/autostart/xfce4-revert-client-side-decorations.desktop
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Thu, 06 Oct 2022 14:30:36 +0200
+
 solydx-system-adjustments-11 (3.4.3) stable; urgency=low
 
   * Move separator to panel clock
