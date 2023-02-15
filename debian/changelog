@@ -1,3 +1,15 @@
+solydx-system-adjustments-11 (3.4.6) stable; urgency=low
+
+  * Script bookmarks for Thunar
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Thu, 03 Nov 2022 19:31:50 +0100
+
+solydx-system-adjustments-11 (3.4.5) stable; urgency=low
+
+  * Remove not available packages from Recommends list
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Thu, 03 Nov 2022 15:43:53 +0100
+
 solydx-system-adjustments-11 (3.4.4) stable; urgency=low
 
   * Remove /etc/X11/Xsession.d/95x11-user-defaults
