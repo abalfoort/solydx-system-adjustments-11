@@ -37,18 +37,18 @@ function sed_append_sting {
 
 function adust_trigger_files {
     # Whisker menu
-    FF=$(which firefox-esr)
-    if [ -z "$FF" ]; then
-        FF=$(which firefox)
+    FF='/usr/bin/firefox-esr'
+    if [ ! -e "$FF" ]; then
+        FF='/usr/bin/firefox'
     fi
-    if [ ! -z "$FF" ]; then
+    if [ -e "$FF" ]; then
         FLE='/etc/skel/.config/xfce4/panel/whiskermenu-9.rc'
         if [ -f $FLE ]; then
             BN=$(basename "$FF")
             sed -i -e "s/firefox[a-z-]*.desktop/$BN.desktop/" "$FLE"
         fi
     fi
-    
+
     # Mozilla
     FLE='/usr/lib/firefox-esr/distribution/distribution.ini'
     if [ -f $FLE ]; then
@@ -88,18 +88,18 @@ case "$1" in
       sed -i 's/greybird-solydx/Breeze-X/' $CONF
       sed -i 's/lightdmbg-flat/lightdmbg/g' $CONF
     fi
-    
+
     CONF='/etc/lightdm/lightdm.conf'
     if [ -e $CONF ]; then
       sed -i 's/^#greeter-hide-users=.*/greeter-hide-users=false/' $CONF
       sed -i 's/^#allow-user-switching=.*/allow-user-switching=true/' $CONF
     fi
-    
+
     CONF='/etc/lightdm/users.conf'
     if [ -e $CONF ]; then
       sed -i -e '/^minimum-uid=/ c minimum-uid=1000' $CONF
     fi
-    
+
     # Change Grub2 Theme
     UPDGRUB=false
     DEFGRUB='/etc/default/grub'
@@ -114,7 +114,7 @@ case "$1" in
         fi
       fi
     fi
-    
+
     # Change Plymouth theme when needed
     CONF='/etc/plymouth/plymouthd.conf'
     if [ -e $CONF ]; then
@@ -127,18 +127,18 @@ case "$1" in
         UPDGRUB=true
       fi
     fi
-    
+
     # Update Grub2
     if $UPDGRUB && [ -e /usr/sbin/update-grub ]; then
       update-grub
     fi
-    
+
     adust_trigger_files
 
   ;;
   
   upgrade|update)
-  
+
   ;;
   abort-upgrade|abort-remove|abort-deconfigure)
 
@@ -159,5 +159,3 @@ esac
 #DEBHELPER#
 
 exit 0
-
-
