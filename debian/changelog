@@ -1,3 +1,9 @@
+solydx-system-adjustments-11 (3.4.7) stable; urgency=low
+
+  * Add triggered files to debian configuration
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Sun, 19 Feb 2023 15:36:51 +0100
+
 solydx-system-adjustments-11 (3.4.6) stable; urgency=low
 
   * Script bookmarks for Thunar
