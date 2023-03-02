@@ -60,6 +60,36 @@ function adust_trigger_files {
     fi
 }
 
+function install_root_files {
+    mkdir -p /root/.config/gtk-3.0
+    mkdir -p /root/.local/share/applications
+    
+    if [ ! -e /root/.config/gtk-3.0/settings.ini ]; then
+        cp -f /usr/share/solydxk/root_files/.config/gtk-3.0/settings.ini /root/.config/gtk-3.0/
+    fi
+    if [ ! -e /root/.config/Thunar ]; then
+        cp -rf /usr/share/solydxk/root_files/.config/Thunar /root/.config/
+    fi
+    if [ ! -e /root/.config/xfce4 ]; then
+        cp -rf /usr/share/solydxk/root_files/.config/xfce4 /root/.config/
+    fi
+    if [ ! -e /root/.local/share/applications/mimeapps.list ]; then
+        cp -f /usr/share/solydxk/root_files/.local/share/applications/mimeapps.list /root/.local/share/applications/
+    fi
+    if [ ! -e /root/.gconf ]; then
+        cp -rf /usr/share/solydxk/root_files/.gconf /root/
+    fi
+    if [ ! -e /root/.xscreensaver ]; then
+        cp -f /usr/share/solydxk/root_files/.xscreensaver /root/
+    fi
+    if [ ! -e /root/.xsessionrc ]; then
+        cp -f /usr/share/solydxk/root_files/.xsessionrc /root/
+    fi
+    if [ ! -e /root/.gtkrc-2.0 ]; then
+        cp -f /usr/share/solydxk/root_files/.gtkrc-2.0 /root/
+    fi
+}
+
 case "$1" in    
   configure|reconfigure)  
     # Configure LightDM
@@ -134,6 +164,7 @@ case "$1" in
     fi
 
     adust_trigger_files
+    install_root_files
 
   ;;
   
