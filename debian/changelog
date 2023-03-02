@@ -1,3 +1,9 @@
+solydx-system-adjustments-11 (3.4.9) stable; urgency=low
+
+  *  Add default configuration for /root
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Tue, 28 Feb 2023 16:36:16 +0100
+
 solydx-system-adjustments-11 (3.4.8) stable; urgency=low
 
   * Remove old adjustments
