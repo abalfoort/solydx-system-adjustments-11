@@ -1,3 +1,9 @@
+solydx-system-adjustments-11 (3.5.0) stable; urgency=low
+
+  * Set menu transparancy to 85 (equal to panel)
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 13 Mar 2023 11:10:26 +0100
+
 solydx-system-adjustments-11 (3.4.9) stable; urgency=low
 
   *  Add default configuration for /root
