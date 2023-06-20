@@ -1,3 +1,28 @@
+solydx-system-adjustments-11 (3.5.4) stable; urgency=low
+
+  * Some minor adjustments to Thunar actions
+  * Added recommends for Thunar actions
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Tue, 20 Jun 2023 09:06:33 +0200
+
+solydx-system-adjustments-11 (3.5.3) stable; urgency=low
+
+  * Fix Thunar actions order
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 19 Jun 2023 17:11:59 +0200
+
+solydx-system-adjustments-11 (3.5.2) stable; urgency=low
+
+  * Added Thunar actions
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Mon, 19 Jun 2023 12:49:11 +0200
+
+solydx-system-adjustments-11 (3.5.1) stable; urgency=low
+
+  * Move notifications to bottom right
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Thu, 11 May 2023 10:19:28 +0200
+
 solydx-system-adjustments-11 (3.5.0) stable; urgency=low
 
   * Set menu transparancy to 85 (equal to panel)
