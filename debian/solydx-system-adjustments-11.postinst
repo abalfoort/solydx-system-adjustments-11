@@ -63,7 +63,7 @@ function adust_trigger_files {
 function install_root_files {
     mkdir -p /root/.config/gtk-3.0
     mkdir -p /root/.local/share/applications
-    
+
     if [ ! -e /root/.config/gtk-3.0/settings.ini ]; then
         cp -f /usr/share/solydxk/root_files/.config/gtk-3.0/settings.ini /root/.config/gtk-3.0/
     fi
@@ -133,14 +133,21 @@ case "$1" in
     # Change Grub2 Theme
     UPDGRUB=false
     DEFGRUB='/etc/default/grub'
+    GRUBTHEMES='/boot/grub/themes'
     if [ -f "$DEFGRUB" ]; then
       UPDGRUB=true
+      
+      # Set Grub theme
       if grep -q '^GRUB_THEME=' $DEFGRUB; then
-        sed -i 's|^GRUB_THEME=.*|GRUB_THEME=/boot/grub/themes/solydxk/theme.txt|' $DEFGRUB
+        if $(grep -qs "/solydxk/theme.txt" $DEFGRUB); then
+          # Keep the dark theme for upgrade users
+          sed -i 's|# Set theme|# Check available themes in /boot/grub/themes|' $DEFGRUB
+          sed -i 's|^GRUB_THEME=.*|GRUB_THEME=/boot/grub/themes/solydxk-dark/theme.txt|' $DEFGRUB
+        fi
       else
         if ! grep -q 'GRUB_THEME=' $DEFGRUB; then
           # Only append if GRUB_THEME= is not in DEFGRUB
-          echo -e '\n# Set theme\nGRUB_THEME=/boot/grub/themes/solydxk/theme.txt' >> $DEFGRUB
+          echo -e '\n# Check available themes in /boot/grub/themes\nGRUB_THEME=/boot/grub/themes/solydxk-light/theme.txt' >> $DEFGRUB
         fi
       fi
     fi
@@ -167,7 +174,7 @@ case "$1" in
     install_root_files
 
   ;;
-  
+
   upgrade|update)
 
   ;;
