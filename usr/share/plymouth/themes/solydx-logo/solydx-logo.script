@@ -1,25 +1,47 @@
 # SolydXK Plymouth theme script
+# https://freedesktop.org/wiki/Software/Plymouth/Scripts/
 
 # RGB / 256
 Window.SetBackgroundTopColor (1.00, 0.61, 0.24);
 Window.SetBackgroundBottomColor (1.00, 0.61, 0.24);
 
-bg.image = Image("solydx-plymouth-bg.png");
+# Load the images
+bg.image = Image("plymouth-bg.png");
+logo.image = Image("plymouth-logo.png");
+bglogo.image = Image("plymouth-bglogo.png");
+
+# Logo background should not be more narrow than the logo itself
+bg_tmp = bg.image.Scale(Window.GetWidth() / 5 , Window.GetHeight());
+if (bg_tmp.GetWidth() > logo.image.GetWidth() + 20) {
+    bg.image = bg_tmp;
+} else {
+    bg.image = bg.image.Scale(bg.image.GetWidth(), Window.GetHeight());
+}
+
+# Place the background
 bg.sprite = Sprite(bg.image);
-bg.sprite.SetX (Window.GetX() + Window.GetWidth() - bg.image.GetWidth());
-bg.sprite.SetY (Window.GetY() + Window.GetHeight() / 2 - bg.image.GetHeight() / 2);
+bg.sprite.SetX(Window.GetX() + Window.GetWidth() - bg.image.GetWidth());
+bg.sprite.SetY(Window.GetY() + Window.GetHeight() / 2 - bg.image.GetHeight() / 2);
 
-bglogo.image = Image("solydx-plymouth-bglogo.png");
-scaled_bglogo.image = bglogo.image.Scale(Window.GetHeight() / 1.5, Window.GetHeight() / 1.5);
-scaled_bglogo.sprite = Sprite(scaled_bglogo.image);
-scaled_bglogo.sprite.SetX(bg.sprite.GetX() - scaled_bglogo.image.GetWidth());
-scaled_bglogo.sprite.SetY(Window.GetY() + Window.GetHeight() - scaled_bglogo.image.GetHeight());
+# Resize logo only when the background is wider than the width of the logo
+logo_width_old = logo.image.GetWidth();
+logo_tmp = logo.image.Scale(bg.image.GetWidth() / 1.8, logo.image.GetHeight());
+logo_width_new = logo_tmp.GetWidth();
+if (logo_width_new > logo_width_old) {
+    logo.image = logo_tmp.Scale(logo_tmp.GetWidth(), logo.image.GetHeight() * (logo_width_new / logo_width_old));
+}
 
-logo.image = Image("solydx-plymouth-logo.png");
+# Place the logo
 logo.sprite = Sprite(logo.image);
-logo.sprite.SetX (Window.GetX() + Window.GetWidth() - (bg.image.GetWidth() / 2) - (logo.image.GetWidth() / 2));
-logo.sprite.SetY (Window.GetY() + 40);
+logo.sprite.SetX(Window.GetX() + Window.GetWidth() - (bg.image.GetWidth() / 2) - (logo.image.GetWidth() / 2));
+logo.sprite.SetY(Window.GetY() + 40);
 logo.opacity_angle = -3.14;
+
+# Place the background logo
+bglogo.image = bglogo.image.Scale(Window.GetHeight() / 1.5, Window.GetHeight() / 1.5);
+bglogo.sprite = Sprite(bglogo.image);
+bglogo.sprite.SetX(bg.sprite.GetX() - bglogo.image.GetWidth());
+bglogo.sprite.SetY(Window.GetY() + Window.GetHeight() - bglogo.image.GetHeight());
 
 fun refresh_callback ()
   {

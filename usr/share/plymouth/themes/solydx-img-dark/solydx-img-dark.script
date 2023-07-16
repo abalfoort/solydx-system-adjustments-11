@@ -4,7 +4,7 @@
 Window.SetBackgroundTopColor (0.50, 0.25, 0.00);
 Window.SetBackgroundBottomColor (0.50, 0.25, 0.00);
 
-bg.image = Image("solydx-plymouth-bg.png");
+bg.image = Image("bg.png");
 bg.sprite = Sprite(bg.image);
 scaled_bg.image = bg.image.Scale(Window.GetWidth(), Window.GetHeight());
 bg.SetImage(scaled_bg.image);
