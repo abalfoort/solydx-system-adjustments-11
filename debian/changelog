@@ -1,3 +1,10 @@
+solydx-system-adjustments-11 (3.6.4) stable; urgency=low
+
+  * Fix /usr/bin/xfce4-panel-plugins invalid ids listing
+  * Change light Grub theme font colors
+
+ -- Arjen Balfoort <arjenbalfoort@hotmail.com>  Thu, 12 Oct 2023 13:10:42 +0200
+
 solydx-system-adjustments-11 (3.6.3) stable; urgency=low
 
   * Add clipman to the default panel
